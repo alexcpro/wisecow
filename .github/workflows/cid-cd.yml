@@ -29,12 +29,12 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/wisecow:latest
 
-      - name: Deploy to Kubernetes
-        uses: azure/k8s-deploy@v1
-        with:
-          namespace: default
-          manifests: |
-            k8s/deployment.yaml
-            k8s/service.yaml
-          images: |
-            ${{ secrets.DOCKER_USERNAME }}/wisecow:latest
+      # - name: Deploy to Kubernetes
+      #   uses: azure/k8s-deploy@v1
+      #   with:
+      #     namespace: default
+      #     manifests: |
+      #       k8s/deployment.yaml
+      #       k8s/service.yaml
+      #     images: |
+      #       ${{ secrets.DOCKER_USERNAME }}/wisecow:latest
